@@ -30,7 +30,6 @@ import {TuktukESComponent} from './components/tukuk.es/tuktuk.component';
 import {TuktukFRComponent} from './components/tuktuk.FR/tuktuk.component';
 import { PrintingComponent } from './components/printing/printing.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,4 +1,4 @@
-<div layout="column" layout-align="center center" style="height: 100%">
+<div layout="column" layout-align="center center" style="height: 100%; margin-bottom: 150px">
   <div class="wrapper-with-shadow" style="width: 650px">
     <div class="form-group mt-5">
       <label for="hours">Número de personas :</label>
@@ -26,15 +26,17 @@
       </div>
       <div layout="row" layout-align="center" class="mt-3">
         <button md-raised-button color="accent" (click)="goBack()" class="mr-1">Cancelar</button>
-        <button md-raised-button color="primary" class="ml-1" (click)="bookTuk()" [disabled]="ticketId">Encargar</button>
+        <button md-raised-button color="primary" class="ml-1" (click)="bookTuk()" [disabled]="!formIsComplete()">Encargar</button>
       </div>
       <div class="mt-5" *ngIf="ticketId" layout="row" layout-align="center start">
         <img src="../../../assets/img/valid.svg" class="mr-4" style="height: 40px; margin-top: 3%">
         <div>
           <p>Hola {{firstName}}, Tu tuktuk ha sido ordenado </p>
           <p class="mb-4"> El te recogerá a las {{selectedHour}} en la recepción</p>
-          <button md-raised-button class="mt-3" color="accent" (click)="print()" style="margin-left: 18%;">Imprimir Ticket</button>
         </div>
+      </div>
+      <div layout="row" layout-align="center center" *ngIf="ticketId">
+        <button md-raised-button class="mt-3" color="accent" (click)="print()">Imprimir Ticket</button>
       </div>
     </div>
   </div>

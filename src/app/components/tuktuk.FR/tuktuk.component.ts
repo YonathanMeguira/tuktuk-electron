@@ -43,6 +43,9 @@ export class TuktukFRComponent implements OnInit {
   goBack() {
     this.router.navigate(['/']);
   }
+  formIsComplete() {
+    return (this.numberOfTravelers && this.selectedHour && this.lastName && this.firstName);
+  }
 
   bookTuk = () => {
     this.ticketId = true;

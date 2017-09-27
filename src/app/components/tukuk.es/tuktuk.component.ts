@@ -30,6 +30,9 @@ export class TuktukESComponent implements OnInit {
       this.travelers.push(i);
     }
   }
+  formIsComplete() {
+    return (this.numberOfTravelers && this.selectedHour && this.lastName && this.firstName);
+  }
   print() {
     this.router.navigate(['print'], {
       queryParams: {
